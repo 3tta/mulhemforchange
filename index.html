@@ -25,12 +25,18 @@
       background-color: #003366; /* أزرق */
       position: absolute;
       left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .top-bar {
       top: 0;
     }
     .bottom-bar {
       bottom: 0;
+      color: white; /* نص أبيض */
+      font-size: 14px;
+      line-height: 1.2;
     }
     img {
       max-width: 200px;
@@ -40,12 +46,6 @@
       font-size: 48px;
       margin: 0;
     }
-    .footer-text {
-      position: absolute;
-      bottom: 25px;
-      font-size: 14px;
-      color: #003366;
-    }
   </style>
 </head>
 <body>
@@ -54,11 +54,9 @@
   <img src="mulhem.png" alt="Logo">
   <h1>قريبًا</h1>
 
-  <div class="footer-text">
+  <div class="bottom-bar">
     موقعنا قيد الإنشاء، تابعونا لتكونوا أول من يعلم.<br>
     © 2025 Mulhem for Change. جميع الحقوق محفوظة.
   </div>
-
-  <div class="bottom-bar"></div>
 </body>
 </html>
