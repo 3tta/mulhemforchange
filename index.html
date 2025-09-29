@@ -7,9 +7,9 @@
   <link rel="icon" type="image/png" href="mulhem.png">
   <style>
     body {
-      background-color: white; /* خلفية بيضاء */
-      color: #003366; /* أزرق داكن */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      color: #003366; /* أزرق */
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -17,55 +17,48 @@
       height: 100vh;
       margin: 0;
       text-align: center;
+      position: relative;
     }
-
+    .top-bar, .bottom-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #003366; /* أزرق */
+      position: absolute;
+      left: 0;
+    }
+    .top-bar {
+      top: 0;
+    }
+    .bottom-bar {
+      bottom: 0;
+    }
     img {
-      max-width: 250px;
+      max-width: 200px;
       margin-bottom: 20px;
     }
-
     h1 {
       font-size: 48px;
       margin: 0;
-      color: #003366;
-      position: relative;
-      display: inline-block;
-      font-weight: bold;
     }
-
-    /* تأثير الخطوط المتعرجة حول العنوان */
-    h1::before {
-      content: '';
+    .footer-text {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: linear-gradient(45deg, transparent 25%, #003366 25%, #003366 50%, transparent 50%, transparent 75%, #003366 75%, #003366);
-      background-size: 20px 20px;
-      z-index: -1;
-    }
-
-    p {
-      font-size: 20px;
-      color: #4a90e2; /* أزرق فاتح */
-      margin-top: 10px;
-    }
-
-    .footer {
-      margin-top: 50px;
-      color: #003366;
+      bottom: 25px;
       font-size: 14px;
+      color: #003366;
     }
-
   </style>
 </head>
 <body>
+  <div class="top-bar"></div>
+
   <img src="mulhem.png" alt="Logo">
   <h1>قريبًا</h1>
-  <p>موقعنا قيد الإنشاء، تابعونا لتكونوا أول من يعلم.</p>
-  <div class="footer">
-    <p>© 2025 Mulhem for Change. جميع الحقوق محفوظة.</p>
+
+  <div class="footer-text">
+    موقعنا قيد الإنشاء، تابعونا لتكونوا أول من يعلم.<br>
+    © 2025 Mulhem for Change. جميع الحقوق محفوظة.
   </div>
+
+  <div class="bottom-bar"></div>
 </body>
 </html>
