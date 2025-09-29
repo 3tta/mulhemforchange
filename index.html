@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="mulhem.png">
   <style>
     body {
-      background-color: #f0f7ff; /* لون خلفية فاتح قريب من الأزرق */
+      background-color: white; /* خلفية بيضاء */
       color: #003366; /* أزرق داكن */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
@@ -28,6 +28,22 @@
       font-size: 48px;
       margin: 0;
       color: #003366;
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    /* تأثير الخطوط المتعرجة حول العنوان */
+    h1::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(45deg, transparent 25%, #003366 25%, #003366 50%, transparent 50%, transparent 75%, #003366 75%, #003366);
+      background-size: 20px 20px;
+      z-index: -1;
     }
 
     p {
@@ -41,6 +57,7 @@
       color: #003366;
       font-size: 14px;
     }
+
   </style>
 </head>
 <body>
