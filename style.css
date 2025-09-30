@@ -62,63 +62,105 @@ ul {
   list-style: none;
 }
 
-/* Language Switch Button in Navbar */
-.lang-switch {
+/* --- Language toggle switch redesign --- */
+
+.lang-switch-toggle {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-left: 18px;
-  padding: 4px 18px 4px 10px;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 0;
+  margin-left: 20px;
+  min-width: 82px;
+  min-height: 38px;
+}
+
+.lang-switch-toggle:focus {
+  outline: 2px solid #003366;
+  outline-offset: 2px;
+}
+
+.lang-label {
   font-size: 17px;
   font-weight: bold;
-  color: #003366;
-  background: #fff;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.09);
-  min-height: 38px;
-  position: relative;
-}
-.lang-switch .switch-label {
-  opacity: 0.5;
-  transition: opacity 0.2s, color 0.2s;
-  font-size: 17px;
+  color: #6a7dab;
   letter-spacing: 1px;
-}
-.lang-switch .switch-label.active {
   opacity: 1;
-  color: #003366;
+  transition: color 0.2s, opacity 0.2s;
+  min-width: 26px;
+  text-align: center;
+  user-select: none;
 }
-.lang-switch .switch-flag {
+
+.lang-switch-toggle.active-ar .ar-label,
+.lang-switch-toggle:not(.active-ar) .en-label {
+  color: #003366;
+  opacity: 1;
+}
+
+.lang-switch-toggle:not(.active-ar) .ar-label,
+.lang-switch-toggle.active-ar .en-label {
+  color: #bfcbe2;
+  opacity: 0.6;
+}
+
+.lang-toggle-slider {
+  width: 48px;
+  height: 28px;
+  background: #f6faff;
+  border-radius: 16px;
+  box-shadow: 0 1px 10px rgba(0,41,102,0.08);
+  border: 1.5px solid #cfe3fa;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: border 0.2s, background 0.2s;
+  margin: 0 2px;
+}
+
+.lang-switch-toggle.active-ar .lang-toggle-slider {
+  background: #e3f0fc;
+  border-color: #1e90ff;
+}
+
+.lang-flag {
   width: 28px;
   height: 28px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  position: absolute;
+  top: 0;
+  left: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e9e9e9;
-  border-radius: 50%;
-  margin: 0 7px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  border: 1px solid #eee;
+  transition: left 0.28s cubic-bezier(.45,.05,.55,.95);
+  overflow: hidden;
+  pointer-events: none;
 }
-.lang-switch:hover,
-.lang-switch:focus {
-  background: #ffc107;
-  color: #003366;
-  outline: none;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+
+.lang-switch-toggle.active-ar .lang-flag {
+  left: 18px; /* Slide flag to right */
 }
+
+.lang-flag svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
 @media (max-width: 768px) {
-  .lang-switch {
+  .lang-switch-toggle {
+    margin-left: 0;
     position: fixed;
-    left: 10px;
+    left: 12px;
     top: 70px;
-    margin: 0;
     z-index: 200;
-    padding: 4px 11px 4px 7px;
-    font-size: 16px;
   }
 }
 
@@ -201,7 +243,7 @@ ul {
     padding-top: 0 !important;
     box-shadow: none !important;
   }
-  .lang-switch {
+  .lang-switch-toggle {
     position: static;
     margin-left: 18px;
     left: auto;
