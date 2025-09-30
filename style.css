@@ -14,22 +14,14 @@
   background-color: #003366;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
 /* Hamburger menu styles */
 .menu-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin: 0 10px;
-  z-index: 102;
-  position: relative;
 }
 
 .menu-toggle span {
@@ -49,6 +41,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
   transition: all 0.3s;
 }
 
@@ -159,9 +152,20 @@ a:focus {
   }
   .menu-toggle {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     z-index: 102;
-    position: relative;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
+  /* If you want the hamburger on the right, swap to right: 10px; left: auto; */
   .navbar ul {
     display: none;
     flex-direction: column;
