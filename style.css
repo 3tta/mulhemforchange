@@ -5,26 +5,41 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 60px; /* لمنع تغطية المحتوى بالـ navbar */
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #003366; /* Dark Blue */
+  background-color: #003366;
   z-index: 100;
 }
 
-.navbar ul {
+.nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo-nav .logo {
+  max-width: 120px;
+}
+
+.nav-links {
+  display: flex;
   list-style: none;
 }
 
-.navbar li {
+.nav-links li {
   margin: 0 20px;
 }
 
-.navbar a {
+.nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -33,9 +48,17 @@
   transition: background 0.3s, border-radius 0.3s;
 }
 
-.navbar a:hover {
-  background-color: #002244; /* Darker Blue */
+.nav-links a:hover {
+  background-color: #002244;
   border-radius: 8px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
 }
 
 /* Hero Section */
@@ -46,14 +69,13 @@
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: linear-gradient(135deg, #4a90e2, #003366); /* Gradient from light blue to dark blue */
+  background: linear-gradient(135deg, #4a90e2, #003366);
   color: white;
   padding: 0 20px;
 }
 
-.hero .logo {
-  max-width: 250px;
-  margin-bottom: 20px;
+.hero h1, .hero p {
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
 .hero h1 {
@@ -63,6 +85,21 @@
 
 .hero p {
   font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  padding: 12px 30px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #e65c00;
 }
 
 /* Info Sections */
@@ -73,8 +110,12 @@
   color: #003366;
 }
 
-.info-section:nth-child(even) {
-  background-color: #e6f0ff; /* Light blue background for even sections */
+#about {
+  background-color: white; /* اللون الأبيض أسفل الهيرو */
+}
+
+.info-section:nth-child(even):not(#about) {
+  background-color: #e6f0ff;
 }
 
 .info-section h2 {
@@ -93,7 +134,8 @@ footer {
   background-color: #003366;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
+  font-size: 16px;
 }
 
 /* Responsive */
@@ -107,13 +149,3 @@ footer {
   .info-section h2 {
     font-size: 28px;
   }
-  .info-section p {
-    font-size: 16px;
-  }
-  .navbar ul {
-    flex-direction: column;
-  }
-  .navbar li {
-    margin: 10px 0;
-  }
-}
