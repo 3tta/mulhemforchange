@@ -32,7 +32,6 @@ body {
   margin: 0 auto;
   width: 100%;
 }
-
 .navbar li { margin: 0 20px; }
 .navbar a {
   color: #fff;
@@ -42,7 +41,13 @@ body {
   display: block;
   transition: background 0.3s, color 0.3s;
 }
-.navbar a:hover { background-color: #002244; border-radius: 8px; color: #4adfff; }
+.navbar a:hover,
+.navbar a:focus {
+  background-color: #002244;
+  border-radius: 8px;
+  color: #4adfff;
+  outline: none;
+}
 
 /* Language Switch with flags */
 .lang-inline-switch {
@@ -55,6 +60,7 @@ body {
   width: 28px; height: 20px;
   background-size: cover;
   border-radius: 3px;
+  display: inline-block;
 }
 .lang-inline-switch .ar-label { background-image: url('jordan-flag.png'); }
 .lang-inline-switch .en-label { background-image: url('uk-flag.png'); }
@@ -64,33 +70,43 @@ body {
   display: flex; flex-direction: column;
   justify-content: center; align-items: center;
   text-align: center;
-  height: 100vh; min-height: 600px;
+  min-height: 600px;
+  min-height: 100svh;
   background: linear-gradient(135deg, #003366 0%, #0066cc 50%, #4adfff 100%);
   color: #fff;
   padding: 0 20px;
 }
 .hero .logo { max-width: 200px; margin-bottom: 20px; }
 .hero h1 {
-  font-size: 64px; margin-bottom: 15px;
+  font-size: 3.2rem; /* Responsive font size */
+  margin-bottom: 15px;
   animation: slideUp 1s ease-out forwards;
 }
 @keyframes slideUp {
   from { transform: translateY(40px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-.hero p { font-size: 20px; max-width: 700px; }
+.hero p { font-size: 1.25rem; max-width: 700px; }
 .cta-btn {
   margin-top: 20px;
   background: #4adfff;
   color: #003366;
   padding: 12px 28px;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
+  border: none;
+  cursor: pointer;
 }
-.cta-btn:hover { background: #fff; color: #003366; transform: scale(1.05); }
+.cta-btn:hover,
+.cta-btn:focus {
+  background: #fff;
+  color: #003366;
+  transform: scale(1.05);
+  outline: none;
+}
 
 /* Info Sections */
 .info-section {
@@ -100,15 +116,15 @@ body {
   color: #003366;
 }
 .info-section:nth-of-type(even) { background-color: #e6f0ff; }
-.info-section h2 { font-size: 32px; margin-bottom: 15px; }
+.info-section h2 { font-size: 2rem; margin-bottom: 15px; }
 .info-section p {
-  font-size: 18px;
+  font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto;
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* Social Icons */
@@ -125,9 +141,12 @@ body {
   font-size: 20px;
   transition: 0.3s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  outline: none;
 }
-.social-icons a:hover {
+.social-icons a:hover,
+.social-icons a:focus {
   transform: rotate(10deg) scale(1.1);
+  outline: 2px solid #4adfff;
 }
 .social-icons a.facebook:hover { color: #1877f3; }
 .social-icons a.linkedin:hover { color: #0a66c2; }
@@ -140,5 +159,35 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px;
-  font-size: 16px;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+  .info-section h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar li { margin: 0 10px; }
+  .navbar a { padding: 10px 10px; font-size: 1rem; }
+  .hero { padding: 0 8px; }
+  .hero h1 { font-size: 1.3rem; }
+  .hero .logo { max-width: 120px; }
+  .info-section { padding: 48px 8px; }
+  .info-section p { padding: 12px; }
+  .social-icons a { width: 36px; height: 36px; font-size: 16px; }
+  footer { padding: 12px; font-size: 0.9rem; }
+}
+
+/* Accessibility: focus outlines for keyboard navigation */
+a:focus,
+button:focus,
+.cta-btn:focus {
+  outline: 2px solid #4adfff;
+  outline-offset: 2px;
 }
