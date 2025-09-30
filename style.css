@@ -50,7 +50,6 @@ body {
   outline: none;
 }
 
-/* Hamburger Menu */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -75,7 +74,6 @@ body {
   transition: all 0.3s;
 }
 
-/* Hamburger Animation */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translateY(9px);
 }
@@ -86,7 +84,6 @@ body {
   transform: rotate(-45deg) translateY(-9px);
 }
 
-/* Responsive Navbar */
 @media (max-width: 900px) {
   .navbar ul {
     flex-direction: column;
@@ -118,7 +115,6 @@ body {
   }
 }
 
-/* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
@@ -175,10 +171,9 @@ body {
   color: #f6faff;
 }
 
-/* ======== CTA BUTTON (اعرف أكثر) ======== */
 .cta-btn {
-  background: #1976d2;
-  color: #fff;
+  background: #fff;
+  color: #1976d2;
   padding: 16px 44px;
   border-radius: 32px;
   font-size: 1.7rem;
@@ -193,14 +188,13 @@ body {
 }
 .cta-btn:hover,
 .cta-btn:focus {
-  background: #1562b1;
+  background: #1976d2;
   color: #fff;
-  border-color: #fff;
+  border-color: #1976d2;
   box-shadow: 0 2px 20px #1976d244, 0 0 0 4px #4adfff55;
   outline: none;
 }
 
-/* Fix mobile: make button never overflow and text wrap properly */
 @media (max-width: 600px) {
   .cta-btn {
     padding: 12px 10vw;
@@ -213,7 +207,6 @@ body {
   }
 }
 
-/* Info Sections */
 .info-section {
   padding: 72px 20px 56px 20px;
   text-align: center;
@@ -240,7 +233,6 @@ body {
   box-shadow: 0 4px 16px rgba(33,118,255,0.06);
 }
 
-/* ======== Social Icons ======== */
 .social-icons {
   margin-top: 18px;
   display: flex;
@@ -292,7 +284,6 @@ body {
   border-color: #e1306c;
 }
 
-/* Footer */
 footer {
   background: linear-gradient(90deg, #003366 60%, #005bea 100%);
   color: #fff;
@@ -302,7 +293,6 @@ footer {
   letter-spacing: 0.1px;
 }
 
-/* Responsive Design */
 @media (max-width: 900px) {
   .hero h1 { font-size: 3.2rem; }
   .hero .logo-bg { padding: 16px; }
@@ -321,7 +311,6 @@ footer {
   footer { padding: 10px; font-size: 0.95rem; }
 }
 
-/* Accessibility: focus outlines for keyboard navigation */
 a:focus,
 button:focus,
 .cta-btn:focus {
