@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>ملهم للتغيير</title>
+  <title>Mulhem for Change</title>
   <link rel="icon" type="image/png" href="mulhem.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,36 +19,41 @@
         <span></span>
       </button>
       <ul>
-        <li><a href="#home">الرئيسية</a></li>
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#events">فعالياتنا</a></li>
-        <li><a href="#contact">تواصل معنا</a></li>
+        <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+        <li><a href="#about" data-i18n="nav_about">من نحن</a></li>
+        <li><a href="#events" data-i18n="nav_events">فعالياتنا</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">تواصل معنا</a></li>
       </ul>
+      <!-- Language Switch with flags -->
+      <div class="lang-inline-switch" id="langInlineSwitch" tabindex="0" role="button" aria-label="تغيير اللغة">
+        <span class="ar-label" title="العربية"></span>
+        <span class="en-label" title="English"></span>
+      </div>
     </nav>
   </header>
 
   <main>
     <section id="home" class="hero" tabindex="-1" aria-label="الرئيسية">
       <img src="mulhem.png" alt="شعار ملهم للتغيير" class="logo" loading="lazy">
-      <h1>قريبًا</h1>
-      <p>موقعنا قيد الإنشاء، تابعونا لتكونوا أول من يعلم.</p>
+      <h1 data-i18n="soon">قريبًا</h1>
+      <p data-i18n="home_text">موقعنا قيد الإنشاء، تابعونا لتكونوا أول من يعلم.</p>
       <a href="#about" class="cta-btn">اعرف أكثر</a>
     </section>
 
     <section id="about" class="info-section" aria-label="من نحن">
-      <h2><i class="fas fa-users"></i> من نحن</h2>
-      <p>
+      <h2><i class="fas fa-users"></i> <span data-i18n="about_title">من نحن</span></h2>
+      <p data-i18n="about_text">
         ملهم للتغيير، هو فريق تطوعي شبابي يعمل على تمكين الأفراد، رفع الوعي، وتنمية المهارات من خلال ورش تفاعلية وأنشطة هادفة تلامس الواقع وتزيد الأثر فينا.
       </p>
     </section>
 
     <section id="events" class="info-section" aria-label="فعالياتنا">
-      <h2><i class="fas fa-calendar-alt"></i> فعالياتنا</h2>
-      <p>قريبًا ستعرض فعالياتنا.</p>
+      <h2><i class="fas fa-calendar-alt"></i> <span data-i18n="events_title">فعالياتنا</span></h2>
+      <p data-i18n="events_text">قريبًا ستعرض فعالياتنا.</p>
     </section>
 
     <section id="contact" class="info-section" aria-label="تواصل معنا">
-      <h2><i class="fas fa-envelope"></i> تواصل معنا</h2>
+      <h2><i class="fas fa-envelope"></i> <span data-i18n="contact_title">تواصل معنا</span></h2>
       <p>
         <a href="mailto:info@mulhemforchange.com">info@mulhemforchange.com</a>
       </p>
@@ -62,8 +67,8 @@
   </main>
 
   <footer>
-    <small>
-      &copy; 2025 ملهم للتغيير. جميع الحقوق محفوظة.
+    <small data-i18n="copyright">
+      &copy; 2025 Mulhem for Change. جميع الحقوق محفوظة.
     </small>
   </footer>
   <script src="script.js"></script>
