@@ -10,7 +10,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #003366;
+  background-color: #003366; /* Dark Blue */
   z-index: 100;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .navbar a:hover {
-  background-color: #002244;
+  background-color: #002244; /* Darker Blue */
   border-radius: 8px;
 }
 
@@ -46,7 +46,7 @@
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: linear-gradient(135deg, #4a90e2, #003366);
+  background: linear-gradient(135deg, #4a90e2, #003366); /* Gradient from light blue to dark blue */
   color: white;
   padding: 0 20px;
 }
@@ -74,7 +74,7 @@
 }
 
 .info-section:nth-child(even) {
-  background-color: #e6f0ff;
+  background-color: #e6f0ff; /* Light blue background for even sections */
 }
 
 .info-section h2 {
