@@ -7,7 +7,7 @@ const translations = {
     soon: "قريبًا",
     home_text: "موقعنا قيد الإنشاء، تابعونا لتكونوا أول من يعلم.",
     about_title: "من نحن",
-    about_text: "ملهم للتغيير، هو فريق تطوعي شبابي يعمل على تمكين الأفراد، رفع الوعي، وتنمية المهارات من خلال ورش تفاعلية وأنشطة هادفة تلامس الواقع وتزيد الأثر فينا.",
+    about_text: "ملهم للتغيير، هو فريق تطوعي شبابي يعمل على تمكين الأفراد، رفع الوعي، وتنمية المهارات من خلال ورش تفاعلية وأنشطة هادفة تلبي احتياجات الشباب وتحقق التغيير الإيجابي في المجتمع.",
     events_title: "فعالياتنا",
     events_text: "قريبًا ستعرض فعالياتنا.",
     contact_title: "تواصل معنا",
@@ -21,7 +21,7 @@ const translations = {
     soon: "Coming Soon",
     home_text: "Our website is under construction. Follow us to be the first to know.",
     about_title: "About Us",
-    about_text: "Mulhem for Change is a youth volunteer team that works to empower individuals, raise awareness, and develop skills through interactive workshops and purposeful activities that resonate with reality and amplify our impact.",
+    about_text: "Mulhem for Change is a youth volunteer team that works to empower individuals, raise awareness, and develop skills through interactive workshops and purposeful activities that resonate with the needs of youth and achieve positive change in society.",
     events_title: "Our Events",
     events_text: "Our events will be listed soon.",
     contact_title: "Contact Us",
@@ -52,18 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Language switch
   const langDiv = document.getElementById('langInlineSwitch');
-  let currentLang = document.documentElement.lang === "en" ? "en" : "ar";
+  let currentLang = (document.documentElement.lang === "en") ? "en" : "ar";
   function toggleLang() {
     currentLang = currentLang === "ar" ? "en" : "ar";
     setLanguage(currentLang);
   }
-  langDiv.addEventListener('click', toggleLang);
-  langDiv.addEventListener('keydown', (e) => {
-    if (e.key === " " || e.key === "Enter") {
-      e.preventDefault();
-      toggleLang();
-    }
-  });
+  if (langDiv) {
+    langDiv.addEventListener('click', toggleLang);
+    langDiv.addEventListener('keydown', (e) => {
+      if (e.key === " " || e.key === "Enter") {
+        e.preventDefault();
+        toggleLang();
+      }
+    });
+  }
 
   setLanguage(currentLang);
 });
