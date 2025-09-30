@@ -200,6 +200,19 @@ body {
   outline: none;
 }
 
+/* Fix mobile: make button never overflow and text wrap properly */
+@media (max-width: 600px) {
+  .cta-btn {
+    padding: 12px 10vw;
+    font-size: 1.2rem;
+    border-width: 3px;
+    max-width: 90vw;
+    box-sizing: border-box;
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
 /* Info Sections */
 .info-section {
   padding: 72px 20px 56px 20px;
