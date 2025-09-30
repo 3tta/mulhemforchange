@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (menuToggleBtn && menu) {
     menuToggleBtn.addEventListener('click', function () {
       menu.classList.toggle('show');
+      menuToggleBtn.setAttribute('aria-expanded', menu.classList.contains('show') ? 'true' : 'false');
     });
   }
 });
