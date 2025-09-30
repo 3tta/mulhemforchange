@@ -11,13 +11,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Language Button -->
-  <button class="lang-toggle" id="langToggleBtn" aria-label="تغيير اللغة">
-    <span>ع</span><span>,</span><span>en</span>
-  </button>
-
   <header>
     <nav class="navbar" aria-label="التنقل الرئيسي">
+      <!-- Hamburger menu button (on the right for RTL) -->
       <button class="menu-toggle" aria-label="فتح القائمة الرئيسية" aria-expanded="false">
         <span></span>
         <span></span>
@@ -29,6 +25,12 @@
         <li><a href="#events" data-i18n="nav_events">فعالياتنا</a></li>
         <li><a href="#contact" data-i18n="nav_contact">تواصل معنا</a></li>
       </ul>
+      <!-- Language Switch Button -->
+      <button class="lang-switch" id="langSwitchBtn" aria-label="تغيير اللغة">
+        <span>ع</span>
+        <span style="margin: 0 4px;">/</span>
+        <span>EN</span>
+      </button>
     </nav>
   </header>
 
