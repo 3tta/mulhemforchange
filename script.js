@@ -1,3 +1,6 @@
-window.onload = function() {
-  console.log("مرحبًا بكم في موقع Mulhem for Change!");
-};
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
