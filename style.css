@@ -5,6 +5,32 @@
   box-sizing: border-box;
 }
 
+/* Language Toggle Button */
+.lang-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 200;
+  background: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+  transition: background 0.3s, color 0.3s;
+}
+.lang-toggle:hover,
+.lang-toggle:focus {
+  background: #002244;
+  color: #ffc107;
+  outline: none;
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -196,7 +222,7 @@ a:focus {
     z-index: 102;
     position: fixed;
     top: 10px;
-    right: 10px; /* Hamburger appears on the right for RTL */
+    right: 10px;
     left: auto;
     width: 44px;
     height: 44px;
@@ -237,6 +263,12 @@ a:focus {
   .social-icons {
     gap: 14px;
     margin-top: 12px;
+  }
+  .lang-toggle {
+    left: 10px;
+    top: 70px;
+    font-size: 16px;
+    padding: 7px 17px;
   }
 }
 
