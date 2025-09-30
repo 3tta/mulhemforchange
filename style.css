@@ -7,7 +7,6 @@ body {
   font-family: 'Cairo', sans-serif;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
-  direction: rtl;
 }
 @keyframes fadeIn { to { opacity: 1; } }
 
@@ -32,7 +31,6 @@ body {
   list-style: none;
   margin: 0 auto;
   width: 100%;
-  transition: all 0.3s;
 }
 
 .navbar li { margin: 0 20px; }
@@ -46,60 +44,20 @@ body {
 }
 .navbar a:hover { background-color: #002244; border-radius: 8px; color: #4adfff; }
 
-/* Hamburger menu button */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  margin-right: 16px;
-  background: none;
-  border: none;
+/* Language Switch with flags */
+.lang-inline-switch {
+  display: flex; gap: 8px;
+  margin-left: 20px;
   cursor: pointer;
-  z-index: 101;
 }
-.menu-toggle span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: #fff;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: 0.3s;
+.lang-inline-switch .ar-label,
+.lang-inline-switch .en-label {
+  width: 28px; height: 20px;
+  background-size: cover;
+  border-radius: 3px;
 }
-
-/* Responsive Navbar */
-@media (max-width: 900px) {
-  .navbar ul {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: rgba(0,51,102,0.96);
-    flex-direction: column;
-    width: 220px;
-    max-width: 100vw;
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-  }
-  .navbar ul.show {
-    height: 200px;
-    opacity: 1;
-    pointer-events: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .navbar li { margin: 10px 0; }
-  .menu-toggle {
-    display: flex;
-  }
-}
+.lang-inline-switch .ar-label { background-image: url('jordan-flag.png'); }
+.lang-inline-switch .en-label { background-image: url('uk-flag.png'); }
 
 /* Hero Section */
 .hero {
