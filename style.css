@@ -9,6 +9,7 @@
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   background-color: #003366; /* Dark Blue */
   z-index: 100;
@@ -17,7 +18,10 @@
 .navbar ul {
   display: flex;
   justify-content: center;
+  align-items: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar li {
@@ -25,17 +29,25 @@
 }
 
 .navbar a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  padding: 15px;
+  padding: 15px 20px;
   display: block;
-  transition: background 0.3s, border-radius 0.3s;
+  transition: background 0.3s, border-radius 0.3s, color 0.3s;
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.navbar a:focus {
   background-color: #002244; /* Darker Blue */
   border-radius: 8px;
+  color: #ffc107;
+  outline: none;
+}
+
+/* Prevent body content from hiding under navbar */
+body {
+  padding-top: 60px; /* Adjust to match navbar height */
 }
 
 /* Hero Section */
@@ -46,23 +58,31 @@
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: linear-gradient(135deg, #4a90e2, #003366); /* Gradient from light blue to dark blue */
-  color: white;
+  min-height: 600px;
+  background: linear-gradient(135deg, #4a90e2 0%, #003366 100%);
+  color: #fff;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .hero .logo {
   max-width: 250px;
+  width: 100%;
+  height: auto;
   margin-bottom: 20px;
+  display: block;
 }
 
+/* Text overflow protection for hero */
 .hero h1 {
   font-size: 64px;
   margin-bottom: 15px;
+  word-break: break-word;
 }
 
 .hero p {
   font-size: 20px;
+  max-width: 700px;
 }
 
 /* Info Sections */
@@ -71,15 +91,17 @@
   text-align: center;
   background-color: #f4f4f4;
   color: #003366;
+  box-sizing: border-box;
 }
 
-.info-section:nth-child(even) {
+.info-section:nth-of-type(even) {
   background-color: #e6f0ff; /* Light blue background for even sections */
 }
 
 .info-section h2 {
   font-size: 36px;
   margin-bottom: 15px;
+  word-break: break-word;
 }
 
 .info-section p {
@@ -91,29 +113,79 @@
 /* Footer */
 footer {
   background-color: #003366;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 20px;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+/* Accessibility: focus style for links */
+a:focus {
+  outline: 2px solid #ffc107;
+  outline-offset: 2px;
 }
 
 /* Responsive */
-@media(max-width: 768px) {
+@media (max-width: 1024px) {
   .hero h1 {
-    font-size: 48px;
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px;
+  }
+
+  .hero {
+    min-height: 400px;
+    height: 70vh;
+    padding: 40px 10px;
+  }
+  .hero h1 {
+    font-size: 40px;
   }
   .hero p {
     font-size: 16px;
   }
-  .info-section h2 {
-    font-size: 28px;
-  }
-  .info-section p {
-    font-size: 16px;
-  }
   .navbar ul {
     flex-direction: column;
+    align-items: stretch;
   }
   .navbar li {
-    margin: 10px 0;
+    margin: 8px 0;
   }
+  .info-section {
+    padding: 50px 10px;
+  }
+  .info-section h2 {
+    font-size: 24px;
+  }
+  .info-section p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+  .navbar a {
+    padding: 12px 10px;
+    font-size: 15px;
+  }
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+/* Misc Fixes */
+/* Ensure navbar does not cover anchor links on scroll */
+:target::before {
+  content: '';
+  display: block;
+  height: 60px; /* Height of navbar */
+  margin-top: -60px;
 }
