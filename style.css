@@ -16,6 +16,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
+/* Hamburger menu styles */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -27,6 +28,8 @@
   border: none;
   cursor: pointer;
   margin: 0 10px;
+  z-index: 102;
+  position: relative;
 }
 
 .menu-toggle span {
@@ -149,31 +152,31 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* Responsive: Navbar and sections */
-@media (max-width: 1024px) {
-  .hero h1 {
-    font-size: 56px;
-  }
-}
-
+/* Responsive and Mobile Navbar fix */
 @media (max-width: 768px) {
   body {
     padding-top: 60px;
   }
   .menu-toggle {
     display: flex;
+    z-index: 102;
+    position: relative;
   }
   .navbar ul {
     display: none;
     flex-direction: column;
     background: #003366;
-    width: 100%;
-    position: absolute;
-    top: 60px;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
     right: 0;
+    left: 0;
     z-index: 101;
     text-align: right;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    padding-top: 80px;
+    transition: all 0.3s;
   }
   .navbar ul.show {
     display: flex;
@@ -184,7 +187,7 @@ a:focus {
   }
   .navbar a {
     padding: 18px 20px;
-    font-size: 17px;
+    font-size: 20px;
   }
   .hero {
     min-height: 400px;
@@ -209,6 +212,9 @@ a:focus {
   }
   .info-section p {
     font-size: 15px;
+  }
+  body.menu-open {
+    overflow: hidden;
   }
 }
 
