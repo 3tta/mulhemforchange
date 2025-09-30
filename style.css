@@ -1,317 +1,63 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #003366;
-  z-index: 100;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-/* Hamburger menu styles */
-.menu-toggle {
-  display: none;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 30px;
-  height: 4px;
-  background: #fff;
-  margin: 4px 0;
-  border-radius: 3px;
-  transition: 0.3s;
-}
-
-.navbar ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
-
-.navbar li {
-  margin: 0 20px;
-}
-
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 15px 20px;
-  display: block;
-  transition: background 0.3s, border-radius 0.3s, color 0.3s;
-}
-
-.navbar a:hover,
-.navbar a:focus {
-  background-color: #002244;
-  border-radius: 8px;
-  color: #ffc107;
-  outline: none;
-}
-
-body {
-  padding-top: 60px;
-}
+/* ...existing styles... */
 
 /* Language Switch Button in Navbar */
 .lang-switch {
   display: flex;
   align-items: center;
-  gap: 4px;
-  margin-right: 0;
+  gap: 8px;
   margin-left: 18px;
-  padding: 7px 18px;
+  padding: 4px 18px 4px 10px;
   font-size: 17px;
   font-weight: bold;
   color: #003366;
-  background: #ffc107;
+  background: #fff;
   border: none;
-  border-radius: 22px;
+  border-radius: 30px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-  height: 38px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+  min-height: 38px;
+  position: relative;
 }
-.lang-switch span {
-  font-family: inherit;
-  font-size: inherit;
+.lang-switch .switch-label {
+  opacity: 0.5;
+  transition: opacity 0.2s, color 0.2s;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.lang-switch .switch-label.active {
+  opacity: 1;
+  color: #003366;
+}
+.lang-switch .switch-flag {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9e9e9;
+  border-radius: 50%;
+  margin: 0 7px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: 1px solid #eee;
 }
 .lang-switch:hover,
 .lang-switch:focus {
-  background: #003366;
-  color: #ffc107;
+  background: #ffc107;
+  color: #003366;
   outline: none;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
-
-/* Hero Section */
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  min-height: 600px;
-  background: linear-gradient(135deg, #4a90e2 0%, #003366 100%);
-  color: #fff;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.hero .logo {
-  max-width: 250px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  display: block;
-}
-
-.hero h1 {
-  font-size: 64px;
-  margin-bottom: 15px;
-  word-break: break-word;
-}
-
-.hero p {
-  font-size: 20px;
-  max-width: 700px;
-}
-
-/* Info Sections */
-.info-section {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: #f4f4f4;
-  color: #003366;
-  box-sizing: border-box;
-}
-
-.info-section:nth-of-type(even) {
-  background-color: #e6f0ff;
-}
-
-.info-section h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  word-break: break-word;
-}
-
-.info-section p {
-  font-size: 18px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* Social Icons */
-.social-icons {
-  margin-top: 16px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.social-icons a {
-  color: #003366;
-  background: #fff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  transition: background 0.3s, color 0.3s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  text-decoration: none;
-}
-
-.social-icons a.facebook:hover { color: #1877f3; background: #e9f1fb;}
-.social-icons a.linkedin:hover { color: #0a66c2; background: #e4eef7;}
-.social-icons a.whatsapp:hover { color: #25d366; background: #e7f9f0;}
-.social-icons a.instagram:hover { color: #e1306c; background: #fae8f1;}
-
-.social-icons a:focus {
-  outline: 2px solid #ffc107;
-  outline-offset: 2px;
-}
-
-/* Footer */
-footer {
-  background-color: #003366;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  font-size: 16px;
-  word-break: break-word;
-}
-
-a:focus {
-  outline: 2px solid #ffc107;
-  outline-offset: 2px;
-}
-
-/* Responsive and Mobile Navbar fix */
 @media (max-width: 768px) {
-  body {
-    padding-top: 60px;
-  }
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 102;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    left: auto;
-    width: 44px;
-    height: 44px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    background: #003366;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 101;
-    text-align: right;
-    box-shadow: none;
-    padding-top: 80px;
-    transition: all 0.3s;
-  }
-  .navbar ul.show {
-    display: flex;
-  }
-  .navbar li {
-    margin: 0;
-    border-bottom: 1px solid #002244;
-  }
-  .navbar a {
-    padding: 18px 20px;
-    font-size: 20px;
-  }
-  body.menu-open {
-    overflow: hidden;
-  }
-  .social-icons {
-    gap: 14px;
-    margin-top: 12px;
-  }
   .lang-switch {
     position: fixed;
     left: 10px;
     top: 70px;
     margin: 0;
     z-index: 200;
-    padding: 7px 14px;
+    padding: 4px 11px 4px 7px;
     font-size: 16px;
   }
 }
 
-/* Hide hamburger on desktop, hide mobile menu unless toggled */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-  .navbar ul {
-    display: flex !important;
-    position: static !important;
-    height: auto !important;
-    background: transparent !important;
-    flex-direction: row !important;
-    padding-top: 0 !important;
-    box-shadow: none !important;
-  }
-  .lang-switch {
-    position: static;
-    margin-left: 18px;
-    left: auto;
-    top: auto;
-    font-size: 17px;
-    padding: 7px 18px;
-  }
-}
-
-/* Misc Fixes */
-:target::before {
-  content: '';
-  display: block;
-  height: 60px;
-  margin-top: -60px;
-}
-html {
-  scroll-behavior: smooth;
-}
+/* ...rest of your existing styles... */
