@@ -10,54 +10,32 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #003366;
+  background-color: #003366; /* Dark Blue */
   z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
 }
 
-.navbar .logo-container .logo {
-  max-width: 100px;
-}
-
-.navbar .nav-links {
+.navbar ul {
   display: flex;
+  justify-content: center;
   list-style: none;
 }
 
-.navbar .nav-links li {
+.navbar li {
   margin: 0 20px;
 }
 
-.navbar .nav-links a {
+.navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 10px;
+  padding: 15px;
   display: block;
   transition: background 0.3s, border-radius 0.3s;
 }
 
-.navbar .nav-links a:hover {
-  background-color: #002244;
+.navbar a:hover {
+  background-color: #002244; /* Darker Blue */
   border-radius: 8px;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  width: 30px;
-  height: 21px;
-  justify-content: space-between;
-}
-
-.hamburger span {
-  background-color: white;
-  height: 4px;
-  width: 100%;
 }
 
 /* Hero Section */
@@ -68,9 +46,14 @@
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: linear-gradient(135deg, #4a90e2, #003366); /* Gradient */
+  background: linear-gradient(135deg, #4a90e2, #003366); /* Gradient from light blue to dark blue */
   color: white;
   padding: 0 20px;
+}
+
+.hero .logo {
+  max-width: 250px;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
@@ -91,7 +74,7 @@
 }
 
 .info-section:nth-child(even) {
-  background-color: #e6f0ff;
+  background-color: #e6f0ff; /* Light blue background for even sections */
 }
 
 .info-section h2 {
@@ -113,45 +96,24 @@ footer {
   padding: 20px;
 }
 
-/* Media Queries */
+/* Responsive */
 @media(max-width: 768px) {
-  .navbar .nav-links {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    background-color: #003366;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 20px 0;
-  }
-
-  .navbar .nav-links.active {
-    display: flex;
-  }
-
-  .navbar .nav-links li {
-    margin: 15px 0;
-    text-align: center;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
   .hero h1 {
     font-size: 48px;
   }
-
   .hero p {
     font-size: 16px;
   }
-
   .info-section h2 {
     font-size: 28px;
   }
-
   .info-section p {
     font-size: 16px;
+  }
+  .navbar ul {
+    flex-direction: column;
+  }
+  .navbar li {
+    margin: 10px 0;
   }
 }
