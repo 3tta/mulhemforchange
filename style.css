@@ -1,66 +1,119 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
   margin: 0;
-  text-align: center;
-  background-color: white;
-  color: #003366;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #003366;
+  z-index: 100;
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
   justify-content: center;
-  margin: 0;
-  padding: 0;
-  background-color: #003366;
+  list-style: none;
 }
 
 .navbar li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 10px 15px;
+  padding: 15px;
   display: block;
+  transition: background 0.3s, border-radius 0.3s;
 }
 
 .navbar a:hover {
   background-color: #002244;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
-main {
-  padding: 40px 20px;
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4a90e2, #003366);
+  color: white;
+  padding: 0 20px;
 }
 
-section {
-  margin-bottom: 40px;
-}
-
-img {
-  max-width: 200px;
+.hero .logo {
+  max-width: 250px;
   margin-bottom: 20px;
 }
 
-h1 {
-  font-size: 48px;
-  margin: 10px 0;
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 15px;
 }
 
-h2 {
+.hero p {
+  font-size: 20px;
+}
+
+/* Info Sections */
+.info-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  color: #003366;
+}
+
+.info-section:nth-child(even) {
+  background-color: #e6f0ff;
+}
+
+.info-section h2 {
   font-size: 36px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.bottom-bar {
+.info-section p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
   background-color: #003366;
   color: white;
-  padding: 15px;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .info-section h2 {
+    font-size: 28px;
+  }
+  .info-section p {
+    font-size: 16px;
+  }
+  .navbar ul {
+    flex-direction: column;
+  }
+  .navbar li {
+    margin: 10px 0;
+  }
 }
