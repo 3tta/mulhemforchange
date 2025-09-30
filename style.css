@@ -1,0 +1,45 @@
+body {
+  background-color: white;
+  color: #003366; /* أزرق */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+
+.top-bar, .bottom-bar {
+  width: 100%;
+  height: 50px; /* تكبير الشريط */
+  background-color: #003366; /* أزرق */
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar {
+  top: 0;
+}
+
+.bottom-bar {
+  bottom: 0;
+  color: white; /* نص أبيض */
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0;
+}
